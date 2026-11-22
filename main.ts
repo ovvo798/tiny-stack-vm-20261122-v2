@@ -61,7 +61,7 @@ function run(p, inp) {
       case 0x05: { const t = D[sp - 1]; D[sp - 1] = D[sp - 2]; D[sp - 2] = t; break; } // SWAP
       case 0x06: D[sp] = D[sp - 2]; sp++; break; // OVER
       case 0x07: { const a = D[sp - 3]; D[sp - 3] = D[sp - 2]; D[sp - 2] = D[sp - 1]; D[sp - 1] = a; break; } // ROT
-      case 0x17: D[sp - 1] = (-D[sp - 1]) | 0; break; // NEG, wraps
+      case 0x17: D[sp - 1] = -D[sp - 1]; break; // NEG, wraps
       case 0x1b: D[sp - 1] = ~D[sp - 1]; break; // NOT
       case 0x10: case 0x11: case 0x12: case 0x13: case 0x14: case 0x15: case 0x16:
       case 0x18: case 0x19: case 0x1a: case 0x1c: case 0x1d: case 0x1e:
